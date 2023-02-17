@@ -8,11 +8,15 @@ public class NumberToLetter {
         System.out.println("Enter your number: ");
         int number = sc.nextInt();
         int hundreds = number / 100;
-        int tens = number / 10;
+        int temp = number % 100;
+        int tens = temp / 10;
         int ones = number % 10;
 
         if (number < 10 && number >= 0) {
             switch (number) {
+                case 0:
+                    System.out.println("zero");
+                    break;
                 case 1:
                     System.out.println("One");
                     break;
@@ -79,57 +83,88 @@ public class NumberToLetter {
                 case 0:
                     break;
                 case 1:
-                    System.out.print("one hundred ");
+                    System.out.print("one hundred");
                     break;
                 case 2:
-                    System.out.print("two hundred ");
+                    System.out.print("two hundred");
                     break;
                 case 3:
-                    System.out.print("three hundred ");
+                    System.out.print("three hundred");
                     break;
                 case 4:
-                    System.out.print("four hundred ");
+                    System.out.print("four hundred");
                     break;
                 case 5:
-                    System.out.print("five hundred ");
+                    System.out.print("five hundred");
                     break;
                 case 6:
-                    System.out.print("six hundred ");
+                    System.out.print("six hundred");
                     break;
                 case 7:
-                    System.out.print("seven hundred ");
+                    System.out.print("seven hundred");
                     break;
                 case 8:
-                    System.out.print("eight hundred ");
+                    System.out.print("eight hundred");
                     break;
                 case 9:
-                    System.out.print("nine hundred ");
+                    System.out.print("nine hundred");
                     break;
             }
             switch (tens) {
+                case 1:
+                    switch (temp % 10) {
+                        case 1:
+                            System.out.println(" eleven");
+                            break;
+                        case 2:
+                            System.out.println(" twelve");
+                            break;
+                        case 3:
+                            System.out.println(" thirteen");
+                            break;
+                        case 4:
+                            System.out.println(" fourteen");
+                            break;
+                        case 5:
+                            System.out.println(" fifteen");
+                            break;
+                        case 6:
+                            System.out.println(" sixteen");
+                            break;
+                        case 7:
+                            System.out.println(" seventeen");
+                            break;
+                        case 8:
+                            System.out.println(" eighteen");
+                            break;
+                        case 9:
+                            System.out.println(" nineteen");
+                            break;
+                    }
+                    break;
                 case 2:
-                    System.out.print("twenty");
+                    System.out.print(" twenty");
                     break;
                 case 3:
-                    System.out.print("thirty");
+                    System.out.print(" thirty");
                     break;
                 case 4:
-                    System.out.print("fourty");
+                    System.out.print(" fourty");
                     break;
                 case 5:
-                    System.out.print("fifty");
+                    System.out.print(" fifty");
                     break;
                 case 6:
-                    System.out.print("sixty");
+                    System.out.print(" sixty");
                     break;
                 case 7:
-                    System.out.print("seventy");
+                    System.out.print(" seventy");
                     break;
                 case 8:
-                    System.out.print("eighty");
+                    System.out.print(" eighty");
                     break;
                 case 9:
-                    System.out.print("ninety");
+                    System.out.print(" ninety");
                     break;
             }
             switch (ones) {
@@ -164,4 +199,3 @@ public class NumberToLetter {
         }
     }
 }
-
