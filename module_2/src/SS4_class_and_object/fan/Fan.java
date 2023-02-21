@@ -9,15 +9,6 @@ public class Fan {
 
     public Fan() {
     }
-
-
-//    public Fan(int speed, double radius, String color, boolean on) {
-//         this.speed = speed;
-//        this.radius = radius;
-//        this.color = color;
-//        this.on = on;
-//    }
-
     public void setOn(boolean on) {
         this.on = on;
     }
