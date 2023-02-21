@@ -1,24 +1,24 @@
 package SS4_class_and_object.exam.quadractic_equation;
 
 public class QuadraticEquation {
-    double a,b,c;
+    double numA,numB,numC;
 
-    public QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    public QuadraticEquation(double numA, double numB, double numC) {
+        this.numA = numA;
+        this.numB = numB;
+        this.numC = numC;
     }
     public double getDiscriminant() {
-        double delta = (b*b)-4*a*c;
+        double delta = (Math.pow(numB, 2))-4*numA*numC;
         return delta;
     }
 
     public double getRoot1() {
-        double r1 = (-b+Math.sqrt(getDiscriminant()))/(2*a);
-        return r1;
+        double root1 = (-numB+Math.sqrt(getDiscriminant()))/(2*numA);
+        return root1;
     }
     public double getRoot2() {
-        double r2;
-        return r2 = (-b-Math.sqrt(getDiscriminant()))/(2*a);
+        double root2 = (-numB-Math.sqrt(getDiscriminant()))/(2*numA);
+        return root2;
     }
 }

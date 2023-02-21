@@ -6,12 +6,12 @@ public class QuadracticController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a:");
-        double a = scanner.nextDouble();
+        double numA = scanner.nextDouble();
         System.out.print("Enter b:");
-        double b = scanner.nextDouble();
+        double numB = scanner.nextDouble();
         System.out.print("Enter c:");
-        double c = scanner.nextDouble();
-        QuadraticEquation quadraticEquation = new QuadraticEquation(a, b, c);
+        double numC = scanner.nextDouble();
+        QuadraticEquation quadraticEquation = new QuadraticEquation(numA, numB, numC);
         double delta = quadraticEquation.getDiscriminant();
         if (delta > 0) {
             System.out.println("Phuong trình có 2 nghiệm là: "
