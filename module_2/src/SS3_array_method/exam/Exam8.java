@@ -10,7 +10,6 @@ public class Exam8 {
         System.out.println("Nhập chuỗi mã bạn muốn: ");
         char chr = sc.next().charAt(0);
         int count = 0;
-        boolean flag = true;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == chr) {
                 count++;

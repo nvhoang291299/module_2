@@ -22,11 +22,7 @@ public class Exam6 {
         int findCol = sc.nextInt();
         float sum = 0.0f;
         for(int i = 0; i < arr2d.length ; i++) {
-            for(int j = 0; j < arr2d[i].length; j++) {
-                if (j == findCol){
-                    sum += arr2d[i][j];
-                }
-            }
+            sum += arr2d[i][findCol];
         }
         System.out.println("Tổng các pần tử của cột " + findCol);
         return sum;
