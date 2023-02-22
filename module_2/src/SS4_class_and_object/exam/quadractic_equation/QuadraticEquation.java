@@ -1,8 +1,9 @@
 package SS4_class_and_object.exam.quadractic_equation;
 
 public class QuadraticEquation {
-    double numA,numB,numC;
-
+    double numA;
+    double numB;
+    double numC;
     public QuadraticEquation(double numA, double numB, double numC) {
         this.numA = numA;
         this.numB = numB;

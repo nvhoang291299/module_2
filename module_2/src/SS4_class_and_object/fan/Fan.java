@@ -43,7 +43,7 @@ public class Fan {
         if (getOn()){
             return str + " fan is on";
         } else {
-            return str + " fan is off";
+            return " fan is off";
         }
     }
 }

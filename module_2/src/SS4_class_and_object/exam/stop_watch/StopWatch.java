@@ -4,9 +4,11 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class StopWatch {
-    public long startTime,endTime;
+    public long startTime;
+    public long endTime;
 
-//    public StopWatch() {}
+
+    public StopWatch() {}
     public LocalTime start(){
         LocalTime time1 = LocalTime.now();
         long startTime = System.currentTimeMillis();

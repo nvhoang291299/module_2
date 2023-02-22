@@ -6,7 +6,7 @@ public class StopWatchController {
     public static void main(String[] args) {
         StopWatch stopwatch = new StopWatch();
         System.out.println("thời gian bắt đầu: " + stopwatch.start());
-        for (int i = 1; i <= 100000; i++) {
+        for (int i = 1; i <= 100; i++) {
             System.out.println("Hello world!");
         }
         System.out.println("thời gian dừng: " + stopwatch.stop());
