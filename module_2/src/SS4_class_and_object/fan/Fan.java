@@ -16,7 +16,11 @@ public class Fan {
         return on;
     }
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (getOn()){
+            this.speed = speed;
+        } else {
+            this.speed = 0;
+        }
     }
     public int getSpeed() {
         return speed;
@@ -29,7 +33,12 @@ public class Fan {
     }
 
     public void setRadius(double radius) {
-        this.radius = radius;
+        if (getOn()){
+            this.radius = radius;
+
+        } else {
+            this.radius = 0;
+        }
     }
 
     public double getRadius() {
@@ -43,7 +52,7 @@ public class Fan {
         if (getOn()){
             return str + " fan is on";
         } else {
-            return " fan is off";
+            return str + " fan is off";
         }
     }
 }
