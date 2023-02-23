@@ -3,9 +3,12 @@ package SS5_AM_static.exam.ClassJava;
 public class Student {
     private String name= "John";
     private String classes = "C02";
-    Student(){}
-    public void setName(String name){
+    public Student(){
         this.name = name;
+        this.classes = classes;
+    }
+     static void setName(String name){
+        name = name;
     }
     public void setClasses(String classes){
         this.classes =classes;

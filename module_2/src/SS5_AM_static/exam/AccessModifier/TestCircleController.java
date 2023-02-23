@@ -5,5 +5,9 @@ public class TestCircleController{
         TestCircle circle = new TestCircle();
         System.out.print("Test radius: " + circle.getRadius() + "\n");
         System.out.print("Test area: " + circle.getArea());
+        TestCircle circle1 = new TestCircle();
+        circle1.getRadius();
+        System.out.print("Test radius: " + circle.getRadius() + "\n");
+        System.out.print("Test area: " + circle.getArea());
     }
 }

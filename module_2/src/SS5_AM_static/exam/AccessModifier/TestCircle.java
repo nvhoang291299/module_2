@@ -8,7 +8,7 @@ public class TestCircle {
         return radius;
     }
 
-      double getRadius() {
+     public double getRadius() {
         return radius;
     }
      public double getArea() {
