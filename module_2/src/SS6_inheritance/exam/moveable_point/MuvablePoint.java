@@ -1,8 +1,8 @@
-package SS6_inheritance.exam.shape_triangle;
+package SS6_inheritance.exam.moveable_point;
 
 import java.util.Arrays;
 
-public class MuvablePoint extends Point{
+public class MuvablePoint extends Point {
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
     public MuvablePoint() {}

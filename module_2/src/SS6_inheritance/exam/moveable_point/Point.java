@@ -1,4 +1,4 @@
-package SS6_inheritance.exam.shape_triangle;
+package SS6_inheritance.exam.moveable_point;
 
 import java.util.Arrays;
 
