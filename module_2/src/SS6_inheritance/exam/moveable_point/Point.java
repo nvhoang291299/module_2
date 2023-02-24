@@ -3,8 +3,8 @@ package SS6_inheritance.exam.moveable_point;
 import java.util.Arrays;
 
 public class Point {
-        private float pointX = 0.0f;
-        private float pointY =0.0f;
+        float pointX = 0.0f;
+        float pointY =0.0f;
 
         public Point() {}
 

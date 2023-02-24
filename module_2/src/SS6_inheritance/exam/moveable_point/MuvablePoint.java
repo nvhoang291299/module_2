@@ -39,22 +39,16 @@ public class MuvablePoint extends Point {
         float[] arr = {getXSpeed(), getYSpeed()};
         return Arrays.toString(arr);
     }
-    public String move() {
-        float x = super.getPointX();
-        float y = super.getPointY();
-        x += this.getXSpeed();
-        y += this.getYSpeed();
-        float[] arr = {x,y};
-        return Arrays.toString(arr);
-    }
     @Override
     public String toString() {
         return "MuvablePoint {" +
                 "x=" + super.getPointX() +
                 ", y=" + super.getPointY() +
                 ", speed = "+ getSpeed() +
-                ", move = "+ move() +
                 '}';
     }
-
+    public MuvablePoint move() {
+        setXY(xSpeed+getPointX(),ySpeed+getPointY());
+        return this;
+    }
 }
