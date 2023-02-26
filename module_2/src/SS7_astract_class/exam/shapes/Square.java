@@ -2,10 +2,12 @@ package SS7_astract_class.exam.shapes;
 
 import SS7_astract_class.exam.colorable.IColorable;
 import SS7_astract_class.exam.resizeable.IResizeable;
-import SS7_astract_class.exam.shapes.Shape;
 
 public class Square extends Shape implements IResizeable, IColorable {
     private double size;
+
+    public Square() {
+    }
 
     public Square(double size) {
         this.size = size;
@@ -27,7 +29,8 @@ public class Square extends Shape implements IResizeable, IColorable {
     }
 
     @Override
-    public void howToColor() {
-        System.out.println("Color all four sides.");
+    public String howToColor() {
+//        System.out.println();
+        return "Color all four sides.";
     }
 }

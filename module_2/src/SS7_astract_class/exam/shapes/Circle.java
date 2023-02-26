@@ -4,6 +4,10 @@ import SS7_astract_class.exam.resizeable.IResizeable;
 
 public class Circle extends Shape implements IResizeable {
     private double radius;
+
+    public Circle() {
+    }
+
     public Circle(double radius) {
         this.radius = radius;
     }

@@ -5,22 +5,22 @@ import SS7_astract_class.exam.shapes.Rectangle;
 import SS7_astract_class.exam.shapes.Shape;
 import SS7_astract_class.exam.shapes.Square;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+//import SS7_astract_class.exam.shapes.Square1;
+
+
 public class ColorableController {
     public static void main(String[] args) {
         Shape[] shapes = new Shape[3];
         shapes[0] = new Circle(10);
-        shapes[1] = new Square(20);
-        shapes[2] = new Rectangle(40,30);
-        double random = Math.floor(Math.random() * 100);
+        shapes[1] = new Square(25);
+        shapes[2] = new Rectangle(30,40);
+
         for (Shape shape:shapes) {
-            if (shape instanceof Circle){
-                System.out.println("Diện tích hình tròn:");
-                System.out.println(shape.getArea());
-            } else if (shape instanceof Square) {
-                System.out.println("Diện tích hình vuông:");
-                System.out.println(shape.getArea());
-            } else {
-                System.out.println("Diện tích hình chữ nhật:");
+            if (shape instanceof IColorable){
+                System.out.println(((IColorable) shape).howToColor());
+                System.out.println("Diện tích hình thoa man dieu kien:");
                 System.out.println(shape.getArea());
             }
         }
