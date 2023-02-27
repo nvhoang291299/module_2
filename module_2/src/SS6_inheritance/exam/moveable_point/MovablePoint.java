@@ -2,15 +2,15 @@ package SS6_inheritance.exam.moveable_point;
 
 import java.util.Arrays;
 
-public class MuvablePoint extends Point {
+public class MovablePoint extends Point {
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
-    public MuvablePoint() {}
-    public MuvablePoint(float xSpeed, float ySpeed) {
+    public MovablePoint() {}
+    public MovablePoint(float xSpeed, float ySpeed) {
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
-    public MuvablePoint(float xSpeed, float ySpeed, float pointX, float pointY){
+    public MovablePoint(float xSpeed, float ySpeed, float pointX, float pointY){
         this.setPointX(pointX);
         this.setPointY(pointY);
         this.xSpeed = xSpeed;
@@ -47,7 +47,7 @@ public class MuvablePoint extends Point {
                 ", speed = "+ getSpeed() +
                 '}';
     }
-    public MuvablePoint move() {
+    public MovablePoint move() {
         setXY(xSpeed+getPointX(),ySpeed+getPointY());
         return this;
     }

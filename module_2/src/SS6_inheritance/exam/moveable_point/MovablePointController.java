@@ -1,12 +1,10 @@
 package SS6_inheritance.exam.moveable_point;
 
-import SS6_inheritance.exam.moveable_point.MuvablePoint;
-
-public class MuvablePointController {
+public class MovablePointController {
     public static void main(String[] args) {
-        MuvablePoint point1 = new MuvablePoint();
-        MuvablePoint point2 = new MuvablePoint(2,3,2,3);
-        MuvablePoint point3 = new MuvablePoint();
+        MovablePoint point1 = new MovablePoint();
+        MovablePoint point2 = new MovablePoint(2,3,2,3);
+        MovablePoint point3 = new MovablePoint();
 
         point1.setSpeed(5,5);
         point3.setXSpeed(4);
