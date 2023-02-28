@@ -1,2 +1,4 @@
-package exam.managerCodegym.controller;public class TeacherController {
+package exam.managerCodegym.controller;
+
+public class TeacherController {
 }

@@ -1,4 +1,4 @@
-package exam.managerCodegym.repository.impl;
+package exam.managerCodegym.repository;
 
 public interface ITeacherRepository {
 

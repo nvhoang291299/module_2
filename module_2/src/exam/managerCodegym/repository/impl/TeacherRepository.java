@@ -1,2 +1,4 @@
-package exam.managerCodegym.repository.impl;public class TeacherReposotory {
+package exam.managerCodegym.repository.impl;
+
+public class TeacherRepository {
 }

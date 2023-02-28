@@ -1,2 +1,4 @@
-package exam.managerCodegym.service;public interface ITeacherService {
+package exam.managerCodegym.service;
+
+public interface ITeacherService {
 }
