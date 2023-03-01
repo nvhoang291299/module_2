@@ -7,4 +7,11 @@ public class Teacher extends Person{
         super(id, name, dateOfBirth, gender);
         this.specialize = specialize;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", specialize='" + specialize + '\'' +
+                '}';
+    }
 }

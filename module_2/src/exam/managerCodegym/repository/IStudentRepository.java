@@ -7,5 +7,5 @@ import java.util.List;
 public interface IStudentRepository {
     List<Student> getAll();
     void createStudent(Student student);
-    void deleteStudent(int i);
+    void deleteStudent(int deleteId);
 }

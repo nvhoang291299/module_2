@@ -25,7 +25,7 @@ public class StudentRepository implements IStudentRepository {
     }
 
     @Override
-    public void deleteStudent(int i) {
-        studentList.remove(i);
+    public void deleteStudent(int deleteId) {
+        studentList.remove(deleteId);
     }
 }

@@ -56,11 +56,18 @@ public class StudentService implements IStudentService {
         int deleteId = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < list.size(); i++) {
             if (deleteId == list.get(i).getId()){
-                iStudentRepository.deleteStudent(i);
-            } else {
-                System.out.println("địa chỉ id mà bạn muốn xóa không tồn tại");
+                System.out.println("Bạn có muốn xóa hay không? (yes/no)");
+                String confirm = sc.nextLine();
+                if (confirm.equals("yes")){
+                    iStudentRepository.deleteStudent(i);
+                    System.out.println("bạn đã xóa thành công");
+                } else {
+                    System.out.println("bạn đã xóa thất bại");
+                }
+                return;
             }
         }
-        System.out.println(list);
+        System.out.println("địa chỉ id mà bạn muốn xóa không tồn tại");
+
     }
 }

@@ -11,14 +11,15 @@ public class StudentController {
     public void menuStudent() {
         Scanner sc = new Scanner(System.in);
         System.out.println("===============================");
+        System.out.println("Đây là danh sách quản lý học viên");
         System.out.println("Các chức năng : ");
-        System.out.println("1. Thêm học sinh ");
-        System.out.println("2. Xóa học sinh ");
-        System.out.println("3. Xem danh sách học sinh ");
+        System.out.println("1. Thêm học viên ");
+        System.out.println("2. Xóa học viên ");
+        System.out.println("3. Xem danh sách học viên ");
         System.out.println("4. Thoát");
         System.out.println("===============================");
-        System.out.println("Chọn chức năng ");
         do {
+            System.out.println("Chọn chức năng: ");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
