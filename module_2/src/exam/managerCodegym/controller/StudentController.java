@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class StudentController {
     private IStudentService iStudentService = new StudentService();
-    byte choice;
+    int choice;
     public void menuStudent() {
         Scanner sc = new Scanner(System.in);
         System.out.println("===============================");
@@ -19,19 +19,18 @@ public class StudentController {
         System.out.println("===============================");
         System.out.println("Chọn chức năng ");
         do {
-            choice = Byte.parseByte(sc.nextLine());
+            choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    iStudentService.createStudent();
+                    iStudentService.addStudent();
                     break;
                 case 2:
+                    iStudentService.deleteStudent();
                     break;
                 case 3:
                     iStudentService.displayAll();
                     break;
-                case 4:
-                    break;
             }
-        } while (choice >= 1 && choice <= 4);
+        } while (choice >= 1 && choice <= 3);
     }
 }

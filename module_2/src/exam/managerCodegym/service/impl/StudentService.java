@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentService implements IStudentService {
+    Scanner sc = new Scanner(System.in);
     private IStudentRepository iStudentRepository = new StudentRepository();
+    List<Student> list = iStudentRepository.getAll();
+
     @Override
     public void displayAll() {
-        List<Student> list = iStudentRepository.getAll();
         if (list.size() == 0){
             System.out.println("danh sách trống");
         } else {
@@ -23,18 +25,13 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void createStudent() {
-        Scanner sc = new Scanner(System.in);
+    public void addStudent() {
         System.out.print("Nhập id: ");
-        int id = Integer.getInteger(sc.nextLine());
+        int id = Integer.parseInt(sc.nextLine());
         System.out.print("Nhập tên: ");
         String name = sc.nextLine();
         System.out.print("Nhập ngày sinh: ");
         String dateOfBirth = sc.nextLine();
-        System.out.print("Nhập lớp: ");
-        String classes = sc.nextLine();
-        System.out.print("Nhập điểm: ");
-        float point = Integer.getInteger(sc.nextLine());
         System.out.print("Nhập giới tính: ");
         String tempGender = sc.nextLine();
         Boolean gender;
@@ -45,5 +42,25 @@ public class StudentService implements IStudentService {
         } else {
             gender = null;
         }
+        System.out.print("Nhập lớp: ");
+        String classes = sc.nextLine();
+        System.out.print("Nhập điểm: ");
+        float point = Float.parseFloat(sc.nextLine());
+        Student student = new Student(id, name, dateOfBirth, gender, classes, point);
+        iStudentRepository.createStudent(student);
+    }
+
+    @Override
+    public void deleteStudent() {
+        System.out.println("nhập mã mà bạn muốn xóa");
+        int deleteId = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < list.size(); i++) {
+            if (deleteId == list.get(i).getId()){
+                iStudentRepository.deleteStudent(i);
+            } else {
+                System.out.println("địa chỉ id mà bạn muốn xóa không tồn tại");
+            }
+        }
+        System.out.println(list);
     }
 }

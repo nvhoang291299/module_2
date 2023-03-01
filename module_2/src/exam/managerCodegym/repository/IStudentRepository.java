@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IStudentRepository {
     List<Student> getAll();
-    List<Student> createStudent();
+    void createStudent(Student student);
+    void deleteStudent(int i);
 }
