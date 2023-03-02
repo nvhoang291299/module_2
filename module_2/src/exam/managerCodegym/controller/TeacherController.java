@@ -20,7 +20,7 @@ public class TeacherController {
         System.out.println("===============================");
         do {
             System.out.println("Chọn chức năng: ");
-            choice = sc.nextInt();
+            choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
                     iTeacherService.addTeacher();
