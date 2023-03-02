@@ -5,12 +5,11 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class CheckBracket {
-    public static void main(String[] args) {
+    public static Boolean isBracket(){
         Scanner sc = new Scanner(System.in);
         Stack<String> bStack = new Stack<>();
-//        System.out.println("Please enter your expression.");
-//        String str = sc.nextLine();
-        String str = "– b + b^2 – 4*a*c)^0.5/ 2*a))";
+        System.out.println("Nhập chuỗi mà bạn muốn kiểm tra:");
+        String str = sc.nextLine();
         ArrayList<String> arrayList = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             arrayList.add(String.valueOf(str.charAt(i)));
@@ -22,17 +21,19 @@ public class CheckBracket {
             }
             if(arrayList.get(i).equals(")")){
                 if (bStack.isEmpty()) {
-                    System.out.println(false);
-                    break;
+                    return false;
                 } else {
                     bStack.pop();
                 }
             }
         }
         if (bStack.isEmpty()){
-            System.out.println(true);
+            return true;
         }else {
-            System.out.println(false);
+            return false;
         }
+    }
+    public static void main(String[] args) {
+        System.out.println(isBracket());
     }
 }

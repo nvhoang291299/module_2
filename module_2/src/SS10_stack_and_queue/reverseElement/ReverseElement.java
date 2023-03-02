@@ -6,7 +6,7 @@ public class ReverseElement {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Stack<Integer> stk = new Stack<>();
-        System.out.println("Nhập độ dài của mảng mà bạn muốn: ");
+        System.out.print("Nhập độ dài của mảng mà bạn muốn: ");
         int n = Integer.parseInt(sc.nextLine());
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
@@ -14,10 +14,12 @@ public class ReverseElement {
             arr[i] = Integer.parseInt(sc.nextLine());
         }
         System.out.println(Arrays.toString(arr));
-        for (int i = 0; i <= stk.size(); i++) {
-//            stk.push(arr[]);
+        for (int i = (arr.length-1); i >= 0; i--) {
+            stk.push(arr[i]);
         }
-        System.out.println(stk);
+        for (int j = (arr.length-1); j >= 0; j--) {
+            arr[j] = stk.pop();
+        }
         System.out.println(Arrays.toString(arr));
     }
 }
