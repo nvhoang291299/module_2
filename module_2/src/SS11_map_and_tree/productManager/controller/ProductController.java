@@ -17,7 +17,7 @@ public class ProductController {
                 "3. Xóa sản phẩm \n" +
                 "4. Hiển thị danh sách sản phẩm \n" +
                 "5. Tìm kiếm sản phẩm \n" +
-                "6. Sắp xếp sản phẩm theo tăng dần \n" +
+                "6. Sắp xếp sản phẩm theo giá \n" +
                 "7. Thoát \n");
         System.out.println("=====================================");
 
@@ -41,6 +41,9 @@ public class ProductController {
                     iProductService.searchProduct();
                     break;
                 case 6:
+                    iProductService.sortProduct();
+                    break;
+                case 7:
                     System.out.println("bạn dã thoát hệ thống");
             }
         } while(num >= 1 && num <= 5);

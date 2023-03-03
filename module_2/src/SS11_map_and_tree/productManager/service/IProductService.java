@@ -7,4 +7,6 @@ public interface IProductService {
     void editProduct();
 
     void searchProduct();
+
+    void sortProduct();
 }

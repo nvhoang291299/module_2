@@ -8,9 +8,7 @@ public interface IProductRepository {
     ArrayList<Product> displayAll();
     void deleteProduct(int id);
     void addProduct(Product product);
-//    void editProduct(int editId, String nameProduct, int price);
-//    boolean searchProduct(Product nameProduct);
-    int editProduct();
-
-    String searchProduct();
+    void editProduct(int editId);
+    void searchProduct(String searchName);
+    void sortProduct();
 }

@@ -6,6 +6,8 @@ import SS11_map_and_tree.productManager.repository.impl.ProductRepository;
 import SS11_map_and_tree.productManager.service.IProductService;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
@@ -25,7 +27,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void deleteProduct() {
-        System.out.print("Nhập mã mà bạn muốn xóa: ");
+        System.out.print("Nhập mã muốn xóa: ");
         int deleteId = Byte.parseByte(sc.nextLine());
         for (int i = 0; i < list.size(); i++) {
             if (deleteId == list.get(i).getId()){
@@ -51,55 +53,71 @@ public class ProductService implements IProductService {
         String nameProduct = sc.nextLine();
         System.out.print("nhập giá sản phẩm: ");
         int price = Integer.parseInt(sc.nextLine());
-//        boolean flag = true;
-//        for (int i = 0; i < list.size(); i++) {
-//            if (id == list.get(i).getId()){
-//                System.out.println("Mã bạn nhập không tồn tại! TT");
-//                flag = false;
-//            }
-//        }
-//        if (flag = true) {
-            iProductRepository.addProduct(new Product(id, nameProduct, price));
-//        }
+
+        iProductRepository.addProduct(new Product(id, nameProduct, price));
     }
 
     @Override
     public void editProduct() {
-//        System.out.print("nhập mã mà bạn muốn chỉnh sửa: ");
-//        int editId = Integer.parseInt(sc.nextLine());
-        int editId = iProductRepository.editProduct();
+        System.out.print("nhập mã mà bạn muốn chỉnh sửa: ");
+        int editId = Integer.parseInt(sc.nextLine());
+        iProductRepository.editProduct(editId);
         for (int i = 0; i < list.size(); i++) {
             if (editId == list.get(i).getId()){
                 System.out.print("nhập lại tên sản phẩm: ");
                 list.get(i).setNameProduct(sc.nextLine());
-//                String nameProduct = list.get(i).getNameProduct();
-                System.out.print("nhập lại tên sản phẩm: ");
+                System.out.print("nhập lại giá: ");
                 list.get(i).setPrice(Integer.parseInt(sc.nextLine()));
-//                int price = list.get(i).getPrice();
-//                iProductRepository.editProduct(editId, nameProduct, price);
                 return;
             }
         }
-
+        System.out.println("mã không tồn tại! TT");
     }
 
     @Override
     public void searchProduct() {
-
-        String searchName = iProductRepository.searchProduct();
-//            for (int i = 0; i < list.size(); i++) {
-//                list.get(i).getProduct();
-//                return;
-//            }
-            for (Product product: list) {
-                if (searchName.equals(product.getNameProduct())) {
-                    System.out.println(product);
-                    return;
-                }
+        System.out.print("nhập tên tìm kiếm: ");
+        String searchName = sc.nextLine();
+        iProductRepository.searchProduct(searchName);
+        for (Product product: list) {
+            if (searchName.equals(product.getNameProduct())) {
+                System.out.println(product);
+                return;
             }
-//        } else {
-            System.out.println("tên sản phẩm bạn tìm kiếm không tồn tại! TT");
-//        }
+        }
+        System.out.println("tên sản phẩm không tồn tại! TT");
+    }
 
+    @Override
+    public void sortProduct() {
+        System.out.print(
+                "Chọn sắp xếp: \n" +
+                        "1. sắp xếp tăng dần \n" +
+                        "2. sắp xếp giảm dần \n");
+        byte choice = Byte.parseByte(sc.nextLine());
+        switch (choice){
+            case 1:
+                Collections.sort(list, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product o1, Product o2) {
+                        return o1.getPrice() - o2.getPrice();
+                    }
+                });
+                for (Product product: list) {
+                    System.out.println(product.toString());
+                }
+                break;
+            case 2:
+                Collections.sort(list, new Comparator<Product>() {
+                    @Override
+                    public int compare(Product o1, Product o2) {
+                        return o2.getPrice() - o1.getPrice();
+                    }
+                });
+                for (Product product: list) {
+                    System.out.println(product.toString());
+                }
+                break;
+        }
     }
 }
