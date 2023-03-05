@@ -28,4 +28,14 @@ public class TeacherRepository implements ITeacherRepository {
     public void deleteTeacher(int deleteId) {
         teacherList.remove(deleteId);
     }
+    @Override
+    public boolean searchTeacher(String searchTeacher) {
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getName().equals(searchTeacher)) {
+                return true;
+            }
+        }
+        System.out.println("tên không tồn tại");
+        return false;
+    }
 }

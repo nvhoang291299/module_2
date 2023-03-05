@@ -16,7 +16,8 @@ public class StudentController {
         System.out.println("1. Thêm học viên ");
         System.out.println("2. Xóa học viên ");
         System.out.println("3. Xem danh sách học viên ");
-        System.out.println("4. Thoát");
+        System.out.println("4. Tìm kiếm  học viên ");
+        System.out.println("5. Thoát");
         System.out.println("===============================");
         do {
             System.out.println("Chọn chức năng: ");
@@ -31,7 +32,10 @@ public class StudentController {
                 case 3:
                     iStudentService.displayAll();
                     break;
+                case 4:
+                    iStudentService.searchStudent();
+                    break;
             }
-        } while (choice >= 1 && choice <= 3);
+        } while (choice >= 1 && choice <= 4);
     }
 }

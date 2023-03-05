@@ -8,4 +8,5 @@ public interface IStudentRepository {
     List<Student> getAll();
     void createStudent(Student student);
     void deleteStudent(int deleteId);
+    boolean searchStudent(String nameStudent);
 }

@@ -11,10 +11,10 @@ import java.util.Scanner;
 public class StudentService implements IStudentService {
     Scanner sc = new Scanner(System.in);
     private IStudentRepository iStudentRepository = new StudentRepository();
-    List<Student> list = iStudentRepository.getAll();
 
     @Override
     public void displayAll() {
+        List<Student> list = iStudentRepository.getAll();
         if (list.size() == 0){
             System.out.println("danh sách trống");
         } else {
@@ -52,6 +52,8 @@ public class StudentService implements IStudentService {
 
     @Override
     public void deleteStudent() {
+        List<Student> list = iStudentRepository.getAll();
+
         System.out.println("nhập mã mà bạn muốn xóa");
         int deleteId = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < list.size(); i++) {
@@ -69,5 +71,21 @@ public class StudentService implements IStudentService {
         }
         System.out.println("địa chỉ id mà bạn muốn xóa không tồn tại");
 
+    }
+
+    @Override
+    public void searchStudent() {
+        List<Student> list = iStudentRepository.getAll();
+
+            System.out.print("nhập tên tìm kiếm: ");
+            String searchName = sc.nextLine();
+            boolean confirmName = iStudentRepository.searchStudent(searchName);;
+            if (confirmName) {
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).getName().equals(searchName)){
+                        System.out.println(list.get(i));
+                    }
+                }
+            }
     }
 }

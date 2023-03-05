@@ -31,7 +31,10 @@ public class TeacherController {
                 case 3:
                     iTeacherService.displayAll();
                     break;
+                case 4:
+                    iTeacherService.searchTeacher();
+                    break;
             }
-        } while (choice >= 1 && choice <= 3);
+        } while (choice >= 1 && choice <= 4);
     }
 }

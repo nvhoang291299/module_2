@@ -28,4 +28,15 @@ public class StudentRepository implements IStudentRepository {
     public void deleteStudent(int deleteId) {
         studentList.remove(deleteId);
     }
+
+    @Override
+    public boolean searchStudent(String searchStudent) {
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getName().equals(searchStudent)) {
+                return true;
+            }
+        }
+        System.out.println("tên không tồn tại");
+        return false;
+    }
 }

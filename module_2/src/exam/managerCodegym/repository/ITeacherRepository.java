@@ -10,4 +10,5 @@ public interface ITeacherRepository {
     List<Teacher> getAll();
     void createTeacher(Teacher teacher);
     void deleteTeacher(int deleteId);
+    boolean searchTeacher(String searchName);
 }

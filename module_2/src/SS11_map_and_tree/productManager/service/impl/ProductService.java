@@ -13,9 +13,10 @@ import java.util.Scanner;
 public class ProductService implements IProductService {
     Scanner sc = new Scanner(System.in);
     private IProductRepository iProductRepository = new ProductRepository();
-    ArrayList<Product> list = iProductRepository.displayAll();
     @Override
     public void displayAll() {
+        ArrayList<Product> list = iProductRepository.displayAll();
+
         if (list.size() == 0){
             System.out.println("danh sách trống");
         } else {
@@ -27,6 +28,8 @@ public class ProductService implements IProductService {
 
     @Override
     public void deleteProduct() {
+        ArrayList<Product> list = iProductRepository.displayAll();
+
         System.out.print("Nhập mã muốn xóa: ");
         int deleteId = Byte.parseByte(sc.nextLine());
         for (int i = 0; i < list.size(); i++) {
@@ -59,37 +62,44 @@ public class ProductService implements IProductService {
 
     @Override
     public void editProduct() {
+        ArrayList<Product> list = iProductRepository.displayAll();
+
         System.out.print("nhập mã mà bạn muốn chỉnh sửa: ");
         int editId = Integer.parseInt(sc.nextLine());
-        iProductRepository.editProduct(editId);
-        for (int i = 0; i < list.size(); i++) {
-            if (editId == list.get(i).getId()){
-                System.out.print("nhập lại tên sản phẩm: ");
-                list.get(i).setNameProduct(sc.nextLine());
-                System.out.print("nhập lại giá: ");
-                list.get(i).setPrice(Integer.parseInt(sc.nextLine()));
-                return;
+        boolean confirm = iProductRepository.editProduct(editId);
+        if (confirm) {
+            for (int i = 0; i < list.size(); i++) {
+                if (editId == list.get(i).getId()){
+                    System.out.print("nhập lại tên sản phẩm: ");
+                    list.get(i).setNameProduct(sc.nextLine());
+                    System.out.print("nhập lại giá: ");
+                    list.get(i).setPrice(Integer.parseInt(sc.nextLine()));
+                    return;
+                }
             }
         }
-        System.out.println("mã không tồn tại! TT");
     }
 
     @Override
     public void searchProduct() {
+        ArrayList<Product> list = iProductRepository.displayAll();
+
         System.out.print("nhập tên tìm kiếm: ");
         String searchName = sc.nextLine();
-        iProductRepository.searchProduct(searchName);
-        for (Product product: list) {
-            if (searchName.equals(product.getNameProduct())) {
-                System.out.println(product);
-                return;
+        boolean confirm = iProductRepository.searchProduct(searchName);;
+        if (confirm) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getNameProduct().equalsIgnoreCase(searchName)){
+                    System.out.println(list.get(i));
+                }
             }
         }
-        System.out.println("tên sản phẩm không tồn tại! TT");
     }
 
     @Override
     public void sortProduct() {
+        ArrayList<Product> list = iProductRepository.displayAll();
+
         System.out.print(
                 "Chọn sắp xếp: \n" +
                         "1. sắp xếp tăng dần \n" +

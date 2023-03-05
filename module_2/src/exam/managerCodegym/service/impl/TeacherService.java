@@ -1,5 +1,6 @@
 package exam.managerCodegym.service.impl;
 
+import exam.managerCodegym.model.Student;
 import exam.managerCodegym.model.Teacher;
 import exam.managerCodegym.repository.ITeacherRepository;
 import exam.managerCodegym.repository.impl.TeacherRepository;
@@ -11,9 +12,10 @@ import java.util.Scanner;
 public class TeacherService implements ITeacherService {
     Scanner sc = new Scanner(System.in);
     private ITeacherRepository iTeacherRepository = new TeacherRepository();
-    List<Teacher> list = iTeacherRepository.getAll();
     @Override
     public void displayAll() {
+        List<Teacher> list = iTeacherRepository.getAll();
+
         if (list.size() == 0){
             System.out.println("danh sách trống");
         } else {
@@ -48,6 +50,8 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void deleteTeacher() {
+        List<Teacher> list = iTeacherRepository.getAll();
+
         System.out.println("nhập mã mà bạn muốn xóa");
         int deleteId = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < list.size(); i++) {
@@ -64,5 +68,20 @@ public class TeacherService implements ITeacherService {
             }
         }
         System.out.println("địa chỉ id mà bạn muốn xóa không tồn tại");
+    }
+    @Override
+    public void searchTeacher() {
+        List<Teacher> list = iTeacherRepository.getAll();
+
+        System.out.print("nhập tên tìm kiếm: ");
+        String searchName = sc.nextLine();
+        boolean confirmName = iTeacherRepository.searchTeacher(searchName);;
+        if (confirmName) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getName().equals(searchName)){
+                    System.out.println(list.get(i));
+                }
+            }
+        }
     }
 }
