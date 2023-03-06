@@ -28,6 +28,7 @@ public class InsertionSort {
             System.out.println("nhập phần tử vào mảng ");
             array[i] = Integer.parseInt(sc.nextLine());
         }
+        System.out.println("mảng trước khi sắp xếp: " + Arrays.toString(array));
         insertionSort(array);
         System.out.print("Mảng sau khi sắp xếp: " + Arrays.toString(array));
     }
