@@ -12,7 +12,7 @@ public class InsertionSort {
             valueCurrent = array[i];
             positionIndex = i;
             while(positionIndex > 0 && valueCurrent < array[positionIndex-1]){
-                System.out.println("đổi "+array[positionIndex-1]+ " cho "+array[positionIndex]);
+                System.out.println("đổi "+array[positionIndex]+ " cho "+array[positionIndex-1]);
                 array[positionIndex] = array[positionIndex-1];
                 positionIndex--;
             }
