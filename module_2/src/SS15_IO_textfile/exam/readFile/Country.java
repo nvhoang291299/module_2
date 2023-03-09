@@ -1,21 +1,22 @@
 package SS15_IO_textfile.exam.readFile;
 
 public class Country {
-    private int id;
+    private String id;
     private String nameCountry;
     private String codeCountry;
+    public Country(){};
 
-    public Country(int id, String nameCountry, String codeCountry) {
+    public Country(String id, String nameCountry, String codeCountry) {
         this.id = id;
         this.codeCountry = codeCountry;
         this.nameCountry = nameCountry;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
