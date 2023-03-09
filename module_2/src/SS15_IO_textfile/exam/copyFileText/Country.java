@@ -1,4 +1,4 @@
-package SS15_IO_textfile.exam.readFile;
+package SS15_IO_textfile.exam.copyFileText;
 
 public class Country {
     private String id;
