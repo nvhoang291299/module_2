@@ -12,13 +12,13 @@ public class ReadFile {
     public static void main(String[] args) {
         BufferedReader br = null;
         String line;
+        List<String> list = new ArrayList<>();
 
         try {
             line = "";
             FileReader reader = new FileReader("src/SS15_IO_textfile/exam/readFile/country.csv");
             br = new BufferedReader(reader);
             while ((line = br.readLine()) != null) {
-                List<String> list = new ArrayList<>();
                 if (line != null) {
                     String[] arr = line.split(",");
                     for (int i = 0; i < arr.length; i++) {

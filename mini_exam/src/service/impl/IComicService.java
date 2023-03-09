@@ -1,2 +1,5 @@
-package service.impl;public interface IComicService {
+package service.impl;
+
+public interface IComicService {
+    void addComic();
 }
