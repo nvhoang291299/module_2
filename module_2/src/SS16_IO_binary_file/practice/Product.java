@@ -1,20 +1,20 @@
-package SS16_IO_binary_file.exam.manageProduct.model;
+package SS16_IO_binary_file.practice;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable{
     private int id;
     private String nameProduct;
     private int price;
     private String produce;
-    private String description;
+    private String descreption;
 
-    public Product(int id, String nameProduct, int price, String produce, String description) {
+    public Product(int id, String nameProduct, int price, String produce, String descreption) {
         this.id = id;
         this.nameProduct = nameProduct;
         this.price = price;
         this.produce = produce;
-        this.description = description;
+        this.descreption = descreption;
     }
 
     public int getId() {
@@ -49,12 +49,12 @@ public class Product implements Serializable {
         this.produce = produce;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescreption() {
+        return descreption;
     }
 
-    public void setDescription(String descreption) {
-        this.description = descreption;
+    public void setDescreption(String descreption) {
+        this.descreption = descreption;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Product implements Serializable {
                 ", nameProduct='" + nameProduct + '\'' +
                 ", price=" + price +
                 ", produce='" + produce + '\'' +
-                ", descreption='" + description + '\'' +
+                ", descreption='" + descreption + '\'' +
                 '}';
     }
 }
