@@ -77,15 +77,15 @@ public class StudentService implements IStudentService {
     public void searchStudent() {
         List<Student> list = iStudentRepository.getAll();
 
-            System.out.print("nhập tên tìm kiếm: ");
-            String searchName = sc.nextLine();
-            boolean confirmName = iStudentRepository.searchStudent(searchName);;
-            if (confirmName) {
-                for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i).getName().equals(searchName)){
-                        System.out.println(list.get(i));
-                    }
+        System.out.print("nhập tên tìm kiếm: ");
+        String searchName = sc.nextLine();
+        boolean confirmName = iStudentRepository.searchStudent(searchName);;
+        if (confirmName) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getName().equals(searchName)){
+                    System.out.println(list.get(i));
                 }
             }
+        }
     }
 }

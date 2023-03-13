@@ -19,11 +19,11 @@ public class ReadBinaryFile {
             inFile.close();
             inStream.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e.getMessage());
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e.getMessage());
+            e.printStackTrace();
         }
         return products;
     }
