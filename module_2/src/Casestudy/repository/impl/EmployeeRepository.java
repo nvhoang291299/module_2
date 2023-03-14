@@ -25,12 +25,18 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public void addEmployee(Employee employee) {
-        List<String> list = new ArrayList<>();
         WriteFile.write("src/Casestudy/data/employees.csv",employee.toCSV());
     }
 
     @Override
-    public void editEmployee(String searchName) {
-        List<String> list = ReadFile.read("src/Casestudy/data/employees.csv");
+    public int editEmployee(int editCMND) {
+        List<Employee> list = displayEmployees();
+        for (int i = 0; i < list.size(); i++) {
+            if (editCMND == list.get(i).getIdentityCard()){
+                return i;
+            }
+        }
+        System.out.println("không tìm thấy");
+        return -1;
     }
 }

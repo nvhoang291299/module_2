@@ -1,12 +1,16 @@
 package Casestudy.controller;
 
+import Casestudy.service.ICustomerService;
 import Casestudy.service.IEmployeeService;
+import Casestudy.service.impl.CustomerService;
 import Casestudy.service.impl.EmployeeService;
 
 import java.util.Scanner;
 
 public class FuramaController {
     private static IEmployeeService iEmployeeService = new EmployeeService();
+    private static ICustomerService iCustomerService = new CustomerService();
+
 
     public static void displayMainMenu() {
         Scanner sc = new Scanner(System.in);
@@ -24,13 +28,14 @@ public class FuramaController {
             choice = Byte.parseByte(sc.nextLine());
             switch (choice) {
                 case 1:
-                    byte choice1;
+
                     System.out.println("Employee Management: \n" +
                             "1. Display list employees \n" +
                             "2. Add new employee \n" +
                             "3. Edit employee \n" +
                             "4. Return main menu \n"
                     );
+                    byte choice1;
                     do{
                         System.out.print("Enter your choice: ");
                         choice1 = Byte.parseByte(sc.nextLine());
@@ -43,6 +48,10 @@ public class FuramaController {
                                 break;
                             case 3:
                                 iEmployeeService.editEmployee();
+                                break;
+                            case 4:
+                                displayMainMenu();
+                                break;
                         }
                     } while (choice1 > 0 && choice1 < 4);
                     break;
@@ -53,6 +62,25 @@ public class FuramaController {
                             "3. Edit customer \n" +
                             "4. Return main menu \n"
                     );
+                    byte choice2;
+                    do{
+                        System.out.print("Enter your choice: ");
+                        choice2 = Byte.parseByte(sc.nextLine());
+                        switch (choice2){
+                            case 1:
+                                iCustomerService.display();
+                                break;
+                            case 2:
+                                iCustomerService.add();
+                                break;
+                            case 3:
+                                iCustomerService.edit();
+                                break;
+                            case 4:
+                                displayMainMenu();
+                                break;
+                        }
+                    } while (choice2 > 0 && choice2 < 4);
                     break;
                 case 3:
                     System.out.println("Facility Management: \n" +
@@ -83,7 +111,7 @@ public class FuramaController {
                     System.out.println("ban da thoat danh sach");
                     break;
             }
-        } while (choice > 0 && choice < 6);
+        } while (choice > 0 && choice < 5);
     }
     public static void main(String[] args) {
         new FuramaController().displayMainMenu();
