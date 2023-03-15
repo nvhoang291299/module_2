@@ -1,6 +1,7 @@
 package Casestudy.service.impl;
 
 import Casestudy.model.Customer;
+import Casestudy.model.Employee;
 import Casestudy.repository.ICustomerRepository;
 import Casestudy.repository.impl.CustomerRepository;
 import Casestudy.service.ICustomerService;
@@ -50,6 +51,19 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void edit() {
-
+        List<Customer> list = iCustomerRepository.display();
+        System.out.println("nhập chứng minh thư: ");
+        int searchIdCard = Integer.parseInt(sc.nextLine());
+        int editEmployee = iCustomerRepository.edit(searchIdCard);
+        for ( Customer element : list ) {
+            if (editEmployee != -1){
+                System.out.println("nhập lại tên nhân viên: ");
+                String fullName = sc.nextLine();
+                element.setFullName(fullName);
+                list.set(editEmployee, element);
+                iCustomerRepository.add(element);
+                return;
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ public class WriteFile {
     public static void write(String path, String string){
         BufferedWriter bw = null;
         try {
-            bw = new BufferedWriter(new FileWriter(path,true));
+            bw = new BufferedWriter(new FileWriter(path));
             bw.write(string);
             bw.newLine();
         } catch (IOException e) {

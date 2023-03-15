@@ -3,6 +3,7 @@ package Casestudy.repository.impl;
 import Casestudy.common.ReadFile;
 import Casestudy.common.WriteFile;
 import Casestudy.model.Customer;
+import Casestudy.model.Employee;
 import Casestudy.repository.ICustomerRepository;
 
 import java.util.ArrayList;
@@ -29,6 +30,13 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public int edit(int editCMND) {
-        return 0;
+        List<Customer> list = display();
+        for (int i = 0; i < list.size(); i++) {
+            if (editCMND == list.get(i).getIdentityCard()){
+                return i;
+            }
+        }
+        System.out.println("không tìm thấy");
+        return -1;
     }
 }
