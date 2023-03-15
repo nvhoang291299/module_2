@@ -1,5 +1,7 @@
 package Casestudy.model;
 
+import java.util.Objects;
+
 public class Employee extends Person{
     private int idEmployee;
     private String degree;

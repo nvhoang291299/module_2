@@ -5,7 +5,7 @@ public class Villa extends Facility{
     private float swimmingpoolArea;
     private byte numOfFloors;
 
-    public Villa(String nameService, Double area, Double cost, int maxNumOfPeople, String rentalType,
+    public Villa(String nameService, Float area, Double cost, int maxNumOfPeople, String rentalType,
                  String roomStandard, Float swimmingpoolArea, Byte numOfFloors) {
         super(nameService, area, cost, maxNumOfPeople, rentalType);
         this.roomStandard = roomStandard;
@@ -35,5 +35,17 @@ public class Villa extends Facility{
 
     public void setNumOfFloors(Byte numOfFloors) {
         this.numOfFloors = numOfFloors;
+    }
+
+    @Override
+    public String toString() {
+        return "Villa{" +
+                "roomStandard='" + roomStandard + '\'' +
+                ", swimmingpoolArea=" + swimmingpoolArea +
+                ", numOfFloors=" + numOfFloors +
+                '}';
+    }
+    public String toCSV(){
+        return super.toCSV() + "," + getRoomStandard() + "," + getSwimmingpoolArea() + "," + getNumOfFloors();
     }
 }

@@ -11,8 +11,8 @@ public class WriteFile {
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter(path,true));
-            bw.newLine();
             bw.write(string);
+            bw.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

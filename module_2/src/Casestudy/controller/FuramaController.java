@@ -2,15 +2,17 @@ package Casestudy.controller;
 
 import Casestudy.service.ICustomerService;
 import Casestudy.service.IEmployeeService;
+import Casestudy.service.IFacilityService;
 import Casestudy.service.impl.CustomerService;
 import Casestudy.service.impl.EmployeeService;
+import Casestudy.service.impl.FacilityService;
 
 import java.util.Scanner;
 
 public class FuramaController {
     private static IEmployeeService iEmployeeService = new EmployeeService();
     private static ICustomerService iCustomerService = new CustomerService();
-
+    private static IFacilityService iFacilityService = new FacilityService();
 
     public static void displayMainMenu() {
         Scanner sc = new Scanner(System.in);
@@ -89,6 +91,23 @@ public class FuramaController {
                             "3. Display list facility maintenance \n" +
                             "4. Return main menu"
                     );
+                    byte choice3;
+                    do{
+                        System.out.print("Enter your choice: ");
+                        choice3 = Byte.parseByte(sc.nextLine());
+                        switch (choice3){
+                            case 1:
+
+                                break;
+                            case 2:
+                                iFacilityService.addFacility();
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                        }
+                    } while (choice3 > 0 && choice3 < 4);
                     break;
                 case 4:
                     System.out.println("Booking Management: \n" +

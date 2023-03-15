@@ -24,6 +24,12 @@ public class ReadFile {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                fd.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return list;
     }

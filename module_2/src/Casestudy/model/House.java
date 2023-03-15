@@ -4,8 +4,8 @@ public class House extends Facility{
     private String roomStandard;
     private byte numOfFloors;
 
-    public House(String nameService, Double area, Double cost, int maxNumOfPeople,
-                String rentalType, String roomStandard, Byte numOfFloors) {
+    public House(String nameService, float area, double cost, int maxNumOfPeople,
+                String rentalType, String roomStandard, byte numOfFloors) {
         super(nameService, area, cost, maxNumOfPeople, rentalType);
         this.roomStandard = roomStandard;
         this.numOfFloors = numOfFloors;
@@ -19,7 +19,7 @@ public class House extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public Byte getNumOfFloors() {
+    public byte getNumOfFloors() {
         return numOfFloors;
     }
 

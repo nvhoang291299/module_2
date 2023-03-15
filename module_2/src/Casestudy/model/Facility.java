@@ -2,20 +2,20 @@ package Casestudy.model;
 
 public abstract class Facility {
     private String nameService;
-    private double area;
+    private float area;
     private double cost;
     private int maxNumOfPeople;
-    private String RentalType;
+    private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String nameService, Double area, Double cost, int maxNumOfPeople, String rentalType) {
+    public Facility(String nameService, float area, Double cost, int maxNumOfPeople, String rentalType) {
         this.nameService = nameService;
         this.area = area;
         this.cost = cost;
         this.maxNumOfPeople = maxNumOfPeople;
-        RentalType = rentalType;
+        this.rentalType = rentalType;
     }
 
     public String getNameService() {
@@ -26,11 +26,11 @@ public abstract class Facility {
         this.nameService = nameService;
     }
 
-    public Double getArea() {
+    public float getArea() {
         return area;
     }
 
-    public void setArea(Double area) {
+    public void setArea(float area) {
         this.area = area;
     }
 
@@ -51,10 +51,24 @@ public abstract class Facility {
     }
 
     public String getRentalType() {
-        return RentalType;
+        return rentalType;
     }
 
     public void setRentalType(String rentalType) {
-        RentalType = rentalType;
+        rentalType = rentalType;
+    }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "nameService='" + nameService + '\'' +
+                ", area=" + area +
+                ", cost=" + cost +
+                ", maxNumOfPeople=" + maxNumOfPeople +
+                ", rentalType='" + rentalType + '\'' +
+                '}';
+    }
+    public String toCSV(){
+        return getNameService() + "," + getArea() + "," + getCost() + "," + getMaxNumOfPeople() + "," + getRentalType();
     }
 }
