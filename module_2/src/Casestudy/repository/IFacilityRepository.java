@@ -1,7 +1,9 @@
 package Casestudy.repository;
 
-import Casestudy.model.Facility;
+import java.util.Map;
 
 public interface IFacilityRepository {
     void createFacility();
+
+    Map<String, Integer> getAll();
 }

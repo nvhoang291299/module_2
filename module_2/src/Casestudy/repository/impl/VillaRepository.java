@@ -1,12 +1,13 @@
 package Casestudy.repository.impl;
 
 import Casestudy.common.WriteFile;
+import Casestudy.common.WriteFileFacility;
 import Casestudy.model.Villa;
-import Casestudy.service.IVillaRepository;
+import Casestudy.repository.IVillaRepository;
 
 public class VillaRepository implements IVillaRepository {
     @Override
     public void createVilla(Villa villa) {
-        WriteFile.write("src/Casestudy/data/facility.csv", villa.toCSV());
+        WriteFileFacility.write("src/Casestudy/data/facility.csv", villa.toCSV());
     }
 }

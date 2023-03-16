@@ -2,11 +2,12 @@ package Casestudy.model;
 
 public class Room extends Facility{
     private String freeService;
+    private int roomId;
 
-    public Room(String nameService, float area, double cost, int maxNumOfPeople,
-                String rentalType, String freeService) {
+    public Room(String nameService, float area, Double cost, int maxNumOfPeople, String rentalType, String freeService, int roomId) {
         super(nameService, area, cost, maxNumOfPeople, rentalType);
         this.freeService = freeService;
+        this.roomId = roomId;
     }
 
     public String getFreeService() {

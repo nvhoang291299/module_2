@@ -1,18 +1,31 @@
 package Casestudy.service.impl;
 
+import Casestudy.model.Customer;
 import Casestudy.repository.IFacilityRepository;
 import Casestudy.repository.impl.FacilityRepository;
-import Casestudy.repository.impl.VillaRepository;
 import Casestudy.service.IFacilityService;
-import Casestudy.service.IVillaRepository;
+import Casestudy.service.IHouseService;
+import Casestudy.service.IRoomService;
 import Casestudy.service.IVillaService;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class FacilityService implements IFacilityService {
     private IFacilityRepository iFacilityRepository = new FacilityRepository();
     private IVillaService iVillaService = new VillaService();
+    private IHouseService iHouseService = new HouseService();
+    private IRoomService iRoomService = new RoomService();
     Scanner sc = new Scanner(System.in);
+
+    @Override
+    public void displayFacility() {
+        Map<String, Integer> map = iFacilityRepository.getAll();
+
+        for (String temp : map.keySet()) {
+            System.out.println(temp);
+        }
+    }
+
     @Override
     public void addFacility() {
         System.out.println("chọn dịch vụ mới: \n" +
@@ -21,20 +34,23 @@ public class FacilityService implements IFacilityService {
                 "3. Add new room \n" +
                 "4. Back to menu \n" +
                 "============================");
-        System.out.print("Chọn loại dịch vụ: ");
-        byte choice = Byte.parseByte(sc.nextLine());
+        byte choice;
         do {
+            System.out.print("Chọn loại dịch vụ: ");
+             choice = Byte.parseByte(sc.nextLine());
             switch (choice) {
                 case 1:
                     iVillaService.addService();
                     break;
                 case 2:
+                    iHouseService.addService();
                     break;
                 case 3:
+                    iRoomService.addService();
                     break;
                 case 4:
                     break;
             }
-        } while(choice != 4);
+        } while(choice > 0 && choice < 4);
     }
 }

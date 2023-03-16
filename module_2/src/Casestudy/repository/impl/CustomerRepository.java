@@ -3,7 +3,6 @@ package Casestudy.repository.impl;
 import Casestudy.common.ReadFile;
 import Casestudy.common.WriteFile;
 import Casestudy.model.Customer;
-import Casestudy.model.Employee;
 import Casestudy.repository.ICustomerRepository;
 
 import java.util.ArrayList;

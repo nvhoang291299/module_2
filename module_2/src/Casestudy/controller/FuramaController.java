@@ -97,7 +97,7 @@ public class FuramaController {
                         choice3 = Byte.parseByte(sc.nextLine());
                         switch (choice3){
                             case 1:
-
+                                iFacilityService.displayFacility();
                                 break;
                             case 2:
                                 iFacilityService.addFacility();
