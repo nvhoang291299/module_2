@@ -21,7 +21,7 @@ public class FacilityRepository implements IFacilityRepository {
             String[] temp = str.split(",");
             if (temp.length > 7){
                 Villa villa = new Villa(temp[0], Float.parseFloat(temp[1]), Double.parseDouble(temp[2]), Integer.parseInt(temp[3]),
-                        temp[4], temp[5], Float.parseFloat(temp[6]), Byte.parseByte(temp[7]), Integer.parseInt(temp[8]));
+                        temp[4], temp[5], Float.parseFloat(temp[6]), Byte.parseByte(temp[7]), temp[8]);
                 Map<Villa, Integer> facilitys = new LinkedHashMap<>();
                 facilitys.put(villa, 1);
             } else if (temp.length == 8) {

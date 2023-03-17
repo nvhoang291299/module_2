@@ -1,22 +1,22 @@
 package Casestudy.validate;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Validate {
     Scanner sc = new Scanner(System.in);
-    private final String REGEX_CODE = "^(SV)(VL|HO|RO)-\\d{4}$";
     private final String REGEX_NAMESERVICE = "^[A-Z]{1}[a-z]+$";
-    public void validate(){
-        System.out.println("nhập mã dịch vụ: ");
-        String code = sc.nextLine();
-        System.out.println("tên dịch vụ: ");
-        String nameService = sc.nextLine();
-        System.out.println("nhập diện tích sử dụng:");
-
-        try {
-            float areaUse = Float.parseFloat(sc.nextLine());
-        } catch (Exception e){
-            System.out.println("bạn nhập sai định dạng");
+    private final String REGEX_CODESERVICE = "^(SV)(VL|HO|RO)-[0-9]{4}$";
+    public boolean validate(String regex){
+        if (regex.length() == 9){
+            Pattern pattern = Pattern.compile(REGEX_CODESERVICE);
+            Matcher matcher = pattern.matcher(regex);
+            return matcher.matches();
+        } else {
+            Pattern pattern = Pattern.compile(REGEX_NAMESERVICE);
+            Matcher matcher = pattern.matcher(regex);
+            return matcher.matches();
         }
     }
 }

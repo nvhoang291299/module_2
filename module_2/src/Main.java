@@ -5,7 +5,7 @@ public class Main {
                 Scanner sc = new Scanner(System.in);
                 int i = 0, j;
                 int n = sc.nextInt();
-                // upper half of the patternfor(i = 0; i < n; i++)
+
                 {
                     for(j = 0; j < (2 * n); j++)
                     {

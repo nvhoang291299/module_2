@@ -3,10 +3,10 @@ package Casestudy.model;
 public class House extends Facility{
     private String roomStandard;
     private byte numOfFloors;
-    private  int houseId;
+    private  String houseId;
 
     public House(String nameService, float area, Double cost, int maxNumOfPeople, String rentalType,
-                 String roomStandard, byte numOfFloors, int houseId) {
+                 String roomStandard, byte numOfFloors, String houseId) {
         super(nameService, area, cost, maxNumOfPeople, rentalType);
         this.roomStandard = roomStandard;
         this.numOfFloors = numOfFloors;

@@ -4,10 +4,10 @@ public class Villa extends Facility{
     private String roomStandard;
     private float swimmingpoolArea;
     private byte numOfFloors;
-    private int villaId;
+    private String villaId;
 
     public Villa(String nameService, float area, Double cost, int maxNumOfPeople, String rentalType,
-                 String roomStandard, float swimmingpoolArea, byte numOfFloors, int villaId) {
+                 String roomStandard, float swimmingpoolArea, byte numOfFloors, String villaId) {
         super(nameService, area, cost, maxNumOfPeople, rentalType);
         this.roomStandard = roomStandard;
         this.swimmingpoolArea = swimmingpoolArea;
