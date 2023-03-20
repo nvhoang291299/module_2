@@ -1,19 +1,32 @@
 package Casestudy.service.impl;
 
+import Casestudy.common.ReadFile;
+import Casestudy.model.Employee;
 import Casestudy.model.Villa;
 import Casestudy.repository.IVillaRepository;
 import Casestudy.repository.impl.VillaRepository;
+import Casestudy.service.IFacilityService;
 import Casestudy.service.IVillaService;
 import Casestudy.validate.UserException;
 import Casestudy.validate.Validate;
 
-
-import java.util.Scanner;
+import java.util.*;
 
 public class VillaService implements IVillaService {
     Scanner sc = new Scanner(System.in);
     private IVillaRepository iVillaRepository = new VillaRepository();
+    private Map<String, Integer> villas = iVillaRepository.displayService();
     Validate validate = new Validate();
+
+    @Override
+    public void displayService() {
+        if(villas.isEmpty()) System.out.println("danh sách trống");
+        else {
+            for (Map.Entry<String, Integer> element: villas.entrySet()) {
+                System.out.println(element);
+            }
+        }
+    }
 
     @Override
     public void addService() {

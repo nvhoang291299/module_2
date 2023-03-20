@@ -7,12 +7,26 @@ import Casestudy.service.IRoomService;
 import Casestudy.validate.UserException;
 import Casestudy.validate.Validate;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class RoomService implements IRoomService {
     Scanner sc = new Scanner(System.in);
     private IRoomRepository iRoomRepository = new RoomRepository();
+    private Map<String, Integer> rooms = iRoomRepository.displayService();
     Validate validate = new Validate();
+
+
+    @Override
+    public void displayService() {
+        if(rooms.isEmpty()) System.out.println("danh sách trống");
+        else {
+            for (Map.Entry<String, Integer> element: rooms.entrySet()) {
+                System.out.println(element);
+            }
+        }
+    }
+
     @Override
     public void addService() {
             System.out.println("Tên dịch vụ:");

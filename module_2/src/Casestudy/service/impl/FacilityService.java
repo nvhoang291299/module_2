@@ -1,8 +1,7 @@
 package Casestudy.service.impl;
 
-import Casestudy.model.Customer;
 import Casestudy.repository.IFacilityRepository;
-import Casestudy.repository.impl.FacilityRepository;
+//import Casestudy.repository.impl.FacilityRepository;
 import Casestudy.service.IFacilityService;
 import Casestudy.service.IHouseService;
 import Casestudy.service.IRoomService;
@@ -11,7 +10,6 @@ import Casestudy.service.IVillaService;
 import java.util.*;
 
 public class FacilityService implements IFacilityService {
-    private IFacilityRepository iFacilityRepository = new FacilityRepository();
     private IVillaService iVillaService = new VillaService();
     private IHouseService iHouseService = new HouseService();
     private IRoomService iRoomService = new RoomService();
@@ -19,11 +17,9 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void displayFacility() {
-        Map<String, Integer> map = iFacilityRepository.getAll();
-
-        for (String temp : map.keySet()) {
-            System.out.println(temp);
-        }
+        iVillaService.displayService();
+        iHouseService.displayService();
+        iRoomService.displayService();
     }
 
     @Override

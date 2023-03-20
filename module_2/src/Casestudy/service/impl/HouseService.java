@@ -7,12 +7,26 @@ import Casestudy.service.IHouseService;
 import Casestudy.validate.UserException;
 import Casestudy.validate.Validate;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class HouseService implements IHouseService {
     Scanner sc = new Scanner(System.in);
     private IHouseRepository iHouseRepository = new HouseRepository();
+    private Map<String, Integer> houses = iHouseRepository.displayService();
+
     Validate validate = new Validate();
+
+    @Override
+    public void displayService() {
+        if(houses.isEmpty()) System.out.println("danh sách trống");
+        else {
+            for (Map.Entry<String, Integer> element: houses.entrySet()) {
+                System.out.println(element);
+            }
+        }
+    }
+
     @Override
     public void addService() {
         System.out.println("Tên dịch vụ:");
