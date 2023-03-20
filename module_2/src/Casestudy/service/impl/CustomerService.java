@@ -55,6 +55,9 @@ public class CustomerService implements ICustomerService {
         System.out.println("nhập chứng minh thư: ");
         int searchIdCard = Integer.parseInt(sc.nextLine());
         int editEmployee = iCustomerRepository.edit(searchIdCard);
+        list.forEach((element) -> {
+            element;
+        });
         for ( Customer element : list ) {
             if (editEmployee != -1){
                 System.out.println("nhập lại tên nhân viên: ");
