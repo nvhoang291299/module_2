@@ -71,7 +71,7 @@ public class HouseService implements IHouseService {
             } catch (UserException e){
                 System.out.println(e.getMessage());
             } catch (NumberFormatException e){
-                System.out.println("số bạn nhập phải là số dương");
+                System.out.println("số bạn nhập phải là số nguyên dương");
             }
         }
         System.out.println("Kiểu thuê:");

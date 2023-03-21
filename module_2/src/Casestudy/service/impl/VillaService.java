@@ -100,16 +100,15 @@ public class VillaService implements IVillaService {
                 System.out.println("số bạn nhập phải là số thực");
             }
         }
-        System.out.println("Số tầng:");
-        byte floors = Byte.parseByte(sc.nextLine());
-        while(floors < 0){
+        byte floors = 0;
+        do {
             try {
-                System.out.println("nhập lại số tầng:");
+                System.out.println("nhập số tầng:");
                 floors = Byte.parseByte(sc.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Số tầng là số nguyên dương");
             }
-        }
+        }while(floors < 0);
         System.out.println("nhập mã dịch vụ:");
         String  codeService = sc.nextLine();
         while(!validate.validate(codeService)){

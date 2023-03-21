@@ -8,15 +8,29 @@ public class Validate {
     Scanner sc = new Scanner(System.in);
     private final String REGEX_NAMESERVICE = "^[A-Z]{1}[a-z]+$";
     private final String REGEX_CODESERVICE = "^(SV)(VL|HO|RO)-[0-9]{4}$";
+    private final String REGEX_DATEOFBIRTH = "^(0[1-9]|1[012])[\\/](0[1-9]|[12][0-9]|3[01])[\\/](19|20)\\d\\d$";
+    private final String NUMBERPHONE_REGEX = "^\\([0-9]{2}\\)-\\((0)[0-9]{9}\\)$";
+    private final String EMAIL_REGEX = "^((?!\\.)[\\w-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";
     public boolean validate(String regex){
-        if (regex.length() == 9){
-            Pattern pattern = Pattern.compile(REGEX_CODESERVICE);
-            Matcher matcher = pattern.matcher(regex);
-            return matcher.matches();
-        } else {
-            Pattern pattern = Pattern.compile(REGEX_NAMESERVICE);
-            Matcher matcher = pattern.matcher(regex);
-            return matcher.matches();
+        Pattern pattern = null;
+        Matcher matcher = null;
+        switch (regex.length()) {
+            case 9:
+                pattern = Pattern.compile(REGEX_CODESERVICE);
+                matcher = pattern.matcher(regex);
+                return matcher.matches();
+            case 10:
+                pattern = Pattern.compile(REGEX_DATEOFBIRTH);
+                matcher = pattern.matcher(regex);
+                return matcher.matches();
+            case 13:
+                pattern = Pattern.compile(NUMBERPHONE_REGEX);
+                matcher = pattern.matcher(regex);
+                return matcher.matches();
+            default:
+                 pattern = Pattern.compile(EMAIL_REGEX);
+                 matcher = pattern.matcher(regex);
+                return matcher.matches();
         }
     }
 }
