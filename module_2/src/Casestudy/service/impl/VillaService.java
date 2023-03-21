@@ -108,7 +108,7 @@ public class VillaService implements IVillaService {
             } catch (NumberFormatException e) {
                 System.out.println("Số tầng là số nguyên dương");
             }
-        }while(floors < 0);
+        }while(floors <= 0);
         System.out.println("nhập mã dịch vụ:");
         String  codeService = sc.nextLine();
         while(!validate.validate(codeService)){

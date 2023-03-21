@@ -14,23 +14,27 @@ public class Validate {
     public boolean validate(String regex){
         Pattern pattern = null;
         Matcher matcher = null;
-        switch (regex.length()) {
-            case 9:
+        int length = regex.length();
+        if (length == 9) {
                 pattern = Pattern.compile(REGEX_CODESERVICE);
                 matcher = pattern.matcher(regex);
                 return matcher.matches();
-            case 10:
-                pattern = Pattern.compile(REGEX_DATEOFBIRTH);
-                matcher = pattern.matcher(regex);
-                return matcher.matches();
-            case 13:
-                pattern = Pattern.compile(NUMBERPHONE_REGEX);
-                matcher = pattern.matcher(regex);
-                return matcher.matches();
-            default:
-                 pattern = Pattern.compile(EMAIL_REGEX);
-                 matcher = pattern.matcher(regex);
-                return matcher.matches();
+        } else if (length == 10) {
+            pattern = Pattern.compile(REGEX_DATEOFBIRTH);
+            matcher = pattern.matcher(regex);
+            return matcher.matches();
+        } else if (length == 13) {
+            pattern = Pattern.compile(NUMBERPHONE_REGEX);
+            matcher = pattern.matcher(regex);
+            return matcher.matches();
+        } else if (length < 9) {
+            pattern = Pattern.compile(REGEX_NAMESERVICE);
+            matcher = pattern.matcher(regex);
+            return matcher.matches();
+        } else {
+            pattern = Pattern.compile(EMAIL_REGEX);
+            matcher = pattern.matcher(regex);
+            return matcher.matches();
         }
     }
 }
