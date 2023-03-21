@@ -61,17 +61,16 @@ public class RoomService implements IRoomService {
                     System.out.println("số bạn nhập phải là số thực");
                 }
             }
-            System.out.println("Số lượng người:");
-            int amount = Integer.parseInt(sc.nextLine());
+            int amount = 0;
             while(amount < 0 || amount > 20){
                 try {
-                    System.out.println("nhập lại số lượng:");
+                    System.out.println("Số lượng người:");
                     amount = Integer.parseInt(sc.nextLine());
                     throw new UserException("số lượng bạn nhập lớn hơn 20");
                 } catch (UserException e){
                     System.out.println(e.getMessage());
                 } catch (NumberFormatException e){
-                    System.out.println("số bạn nhập phải là số dương");
+                    System.out.println("số bạn nhập phải là số nguyên dương");
                 }
             }
             System.out.println("Kiểu thuê:");

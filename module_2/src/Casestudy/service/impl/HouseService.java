@@ -62,7 +62,7 @@ public class HouseService implements IHouseService {
             }
         }
         System.out.println("Số lượng người:");
-        int amount = Integer.parseInt(sc.nextLine());
+        int amount = 0;
         while(amount < 0 || amount > 20){
             try {
                 System.out.println("nhập lại số lượng:");
